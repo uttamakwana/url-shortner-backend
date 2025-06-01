@@ -11,3 +11,7 @@ rootRouter.use("/auth", authRouter);
 rootRouter.use("/users", userRouter);
 // url
 rootRouter.use("/urls", urlRouter);
+
+rootRouter.use("/", (req, res) => {
+    res.send("Working!")
+})
