@@ -14,7 +14,9 @@ const PORT = Number(CONFIG.PORT)
 
 // middlewares
 app.use(cors({
-    origin: [CONFIG.FRONTEND_ORIGIN],
+    origin: (origin, callback) => {
+        callback(null, origin || true); // allow requests with no origin like mobile apps or curl
+    },
     credentials: true
 }));
 app.use(express.json());
