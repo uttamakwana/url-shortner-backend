@@ -8,8 +8,8 @@ export const SESSION_MODEL = "session";
 
 // dates
 export const DATE_AFTER_THIRTY_DAYS_FROM_NOW = new Date(Date.now() + 30 * 24 * 60 * 1000);
-export const REFRESH_TOKEN_EXPIRES_IN = "5m";
-export const ACCESS_TOKEN_EXPIRES_IN = "1m";
+export const REFRESH_TOKEN_EXPIRES_IN = "30d";
+export const ACCESS_TOKEN_EXPIRES_IN = "15m";
 
 // http status code
 export const OK = 200;

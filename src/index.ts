@@ -9,7 +9,7 @@ import { connectToDatabase } from "./config";
 import { errorHandler } from "./middlewares";
 
 // configurations
-const app = express();
+export const app = express();
 const PORT = Number(CONFIG.PORT)
 
 // middlewares

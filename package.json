@@ -16,6 +16,7 @@
   "author": "Uttam Makwana",
   "license": "MIT",
   "dependencies": {
+    "@netlify/functions": "^4.0.0",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -24,6 +25,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.1",
     "nanoid": "^5.1.5",
+    "serverless-http": "^3.2.0",
     "ts-node-dev": "^2.0.0",
     "zod": "^3.25.42"
   },
