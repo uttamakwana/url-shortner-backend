@@ -7,6 +7,7 @@ import { CONFIG } from "./config/env";
 import { rootRouter } from "./routes/root.route";
 import { connectToDatabase } from "./config";
 import { errorHandler } from "./middlewares";
+import { API_ENDPOINT } from "./constants";
 
 // configurations
 const app = express();
@@ -34,7 +35,7 @@ app.use(errorHandler);
 // server listening
 app.listen(PORT, () => {
     console.log(`****Server started*****`);
-    console.log(`URL: http://localhost:${PORT}`);
+    console.log(`URL: ${API_ENDPOINT}`);
 
     connectToDatabase();
 });

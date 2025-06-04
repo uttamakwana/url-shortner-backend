@@ -12,6 +12,7 @@ const env_1 = require("./config/env");
 const root_route_1 = require("./routes/root.route");
 const config_1 = require("./config");
 const middlewares_1 = require("./middlewares");
+const constants_1 = require("./constants");
 // configurations
 const app = (0, express_1.default)();
 const PORT = Number(env_1.CONFIG.PORT);
@@ -34,7 +35,7 @@ app.use(middlewares_1.errorHandler);
 // server listening
 app.listen(PORT, () => {
     console.log(`****Server started*****`);
-    console.log(`URL: http://localhost:${PORT}`);
+    console.log(`URL: ${constants_1.API_ENDPOINT}`);
     (0, config_1.connectToDatabase)();
 });
 exports.default = app;
