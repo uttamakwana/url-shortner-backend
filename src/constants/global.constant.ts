@@ -34,9 +34,9 @@ export const enum ErrorCode {
 export const SALT_ROUND = 10;
 export const NANO_ID_SIZE = 6;
 
-export const API_ENDPOINT = `http://localhost:4000`
 
 export const isProduction = CONFIG.NODE_ENV === "production";
+export const API_ENDPOINT = isProduction ? "https://inki.onrender.com" : `http://localhost:4000`
 
 export const cookieOptions: CookieOptions = {
     httpOnly: true,                     // Prevents JavaScript access (security!)
