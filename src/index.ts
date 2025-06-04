@@ -9,14 +9,13 @@ import { connectToDatabase } from "./config";
 import { errorHandler } from "./middlewares";
 
 // configurations
-export const app = express();
+const app = express();
 const PORT = Number(CONFIG.PORT)
 
 // middlewares
 app.use(cors({
-    origin: (origin, callback) => {
-        callback(null, origin || true); // allow requests with no origin like mobile apps or curl
-    },
+    origin: [CONFIG.FRONTEND_ORIGIN],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
 app.use(express.json());
@@ -25,6 +24,9 @@ app.use(cookieParser());
 
 // routes
 app.use("/", rootRouter);
+app.get("/", (_req, res) => {
+  res.status(200).send("✔️ API Server is running. Try POST /users/login or GET /some-route");
+});
 
 // error handler middleware
 app.use(errorHandler);
@@ -36,3 +38,5 @@ app.listen(PORT, () => {
 
     connectToDatabase();
 });
+
+export default app;
