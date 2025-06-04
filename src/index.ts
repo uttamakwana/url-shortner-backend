@@ -23,10 +23,10 @@ app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(cookieParser());
 
 // routes
-app.use("/", rootRouter);
 app.get("/", (_req, res) => {
-  res.status(200).send("✔️ API Server is running. Try POST /users/login or GET /some-route");
+  res.status(200).send("✔️ API Server is running!");
 });
+app.use("/", rootRouter);
 
 // error handler middleware
 app.use(errorHandler);

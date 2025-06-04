@@ -12,7 +12,4 @@ exports.rootRouter.use("/auth", auth_route_1.authRouter);
 exports.rootRouter.use("/users", user_route_1.userRouter);
 // url
 exports.rootRouter.use("/urls", url_route_1.urlRouter);
-exports.rootRouter.use("/", (req, res) => {
-    res.send("Working!");
-});
 //# sourceMappingURL=root.route.js.map
